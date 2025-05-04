@@ -1,0 +1,62 @@
+.chat-wrapper {
+  max-width: 720px;
+  margin: 32px auto;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.faq-category-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.faq-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.faq-card {
+  width: calc(33% - 16px);
+  min-width: 200px;
+  cursor: pointer;
+  text-align: center;
+  background-color: #f3f3f3;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: #e0e0e0;
+  }
+}
+
+.chat-box {
+  border: 1px solid #ccc;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+
+  .message {
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 8px;
+
+    &.user {
+      background-color: #e3f2fd;
+      text-align: right;
+    }
+
+    &.bot {
+      background-color: #fff3cd;
+      text-align: left;
+    }
+  }
+}
+
+.chat-input {
+  width: 100%;
+}

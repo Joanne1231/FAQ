@@ -1,59 +1,32 @@
-# FaxManagement
+📄 智能客服系統 - 專案說明本專案是一個使用 FastAPI + MongoDB 搭配 Angular Material 建構的智能客服系統，具備常見問題查詢、GPT 回答與 UI 互動功能，適合部署至雲端或本地開發測試。
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.10.
+🧩 技術架構前端：Angular 15+、Angular Material UI
+後端：FastAPI、Pymongo
+資料庫：MongoDB Atlas
+AI 模型：OpenAI GPT-3.5
+部署平台：Zeabur / Local
 
-## Development server
+📁 專案結構 fax-management/
+├── backend/ # FastAPI 後端
+│ ├── main.py # FastAPI 入口
+│ ├── routes.py # API 路由定義
+│ ├── database.py # MongoDB 連線設定
+│ ├── openai_client.py # GPT 串接邏輯
+│ ├── models.py # Pydantic 資料模型
+│ └── seed.py # 初始 FAQ 資料填充
+│
+├── frontend/ # Angular 前端
+│ ├── src/app/pages/chat-bot/
+│ │ └── chat-bot.component.\* # 客服聊天 UI
+│ ├── proxy.conf.json # 本地 API 代理設定
+│ └── app.routes.ts # 路由配置
+│
+├── package.json # 可選的通用啟動指令
+└── README.md # 本說明文件
 
-To start a local development server, run:
-
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+📦 MongoDB FAQ 資料格式
+{
+"question": "如何開戶？",
+"answer": "請攜帶身分證及健保卡至分行辦理。",
+"category": "service"
+}

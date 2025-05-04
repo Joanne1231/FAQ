@@ -1,0 +1,31 @@
+<div class="chat-wrapper">
+    <mat-button-toggle-group class="faq-category-toggle" name="faqCategories" [value]="selectedCategory"
+        (change)="onCategoryChange($event.value)">
+        <mat-button-toggle value="service">常見問題</mat-button-toggle>
+        <mat-button-toggle value="account">帳戶問題</mat-button-toggle>
+        <mat-button-toggle value="order">下單問題</mat-button-toggle>
+    </mat-button-toggle-group>
+
+    <div class="faq-suggestions">
+        <mat-card class="faq-card" *ngFor="let faq of suggestedFaqs" (click)="onSelectFaq(faq)">
+            <mat-card-content>{{ faq.question }}</mat-card-content>
+        </mat-card>
+    </div>
+    <!-- 聊天視窗 -->
+    <div class="chat-box">
+        <div class="message user">
+            {{ selectedQuestion }}
+        </div>
+        <div class="message bot">
+            {{ botResponse }}
+        </div>
+    </div>
+
+    <!-- 輸入框 -->
+    <mat-form-field class="chat-input" appearance="outline">
+        <input matInput [(ngModel)]="userInput" placeholder="請輸入您的問題...">
+        <button mat-icon-button matSuffix (keydown)="onInputKeydown($event)">
+            <mat-icon>send</mat-icon>
+        </button>
+    </mat-form-field>
+</div>
